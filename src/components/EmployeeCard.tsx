@@ -2,15 +2,30 @@ interface EmployeeProps {
   name: string;
   role: string;
   isActive: boolean;
+  department: string;
 }
+
+const departmentColors: Record<string, string> = {
+  IT: "border-blue-500",
+  HR: "border-pink-500",
+  Finance: "border-green-500",
+  Marketing: "border-purple-500",
+  Operations: "border-orange-500",
+};
 
 export default function EmployeeCard({
   name,
   role,
   isActive,
+  department,
 }: EmployeeProps) {
+  const borderColor =
+    departmentColors[department] || "border-gray-400";
+
   return (
-    <div className="border p-4 rounded-lg shadow-md bg-white">
+    <div
+      className={`border-2 p-4 rounded-lg shadow-md bg-white ${borderColor}`}
+    >
       <h2 className="text-xl font-bold text-gray-800">
         {name}
       </h2>
@@ -26,6 +41,10 @@ export default function EmployeeCard({
       >
         {isActive ? "Aktif" : "Non-Aktif"}
       </span>
+
+      <p className="text-gray-600 mt-2">
+        Departemen: {department}
+      </p>
     </div>
   );
 }

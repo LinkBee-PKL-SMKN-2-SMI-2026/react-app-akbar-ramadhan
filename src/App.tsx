@@ -1,24 +1,40 @@
 import EmployeeCard from "./components/EmployeeCard";
 
-// Simulasi data dari Backend (Dummy Data)
 const employees = [
   {
     id: 1,
     name: "Budi Santoso",
     role: "Frontend Developer",
     isActive: true,
+    department: "IT",
   },
   {
     id: 2,
     name: "Siti Aminah",
     role: "UI/UX Designer",
     isActive: true,
+    department: "HR",
   },
   {
     id: 3,
     name: "Agus Pratama",
     role: "Backend Developer",
     isActive: false,
+    department: "Finance",
+  },
+  {
+    id: 4,
+    name: "Dewi Lestari",
+    role: "Marketing Specialist",
+    isActive: true,
+    department: "Marketing",
+  },
+  {
+    id: 5,
+    name: "Rizky Maulana",
+    role: "Operations Staff",
+    isActive: true,
+    department: "Operations",
   },
 ];
 
@@ -36,6 +52,7 @@ export default function App() {
             name={employee.name}
             role={employee.role}
             isActive={employee.isActive}
+            department={employee.department}
           />
         ))}
       </div>
